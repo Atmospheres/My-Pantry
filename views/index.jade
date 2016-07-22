@@ -1,0 +1,114 @@
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scal=1')
+    title My-Pantry
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name='keywords', content='')
+    link(rel='icon', href='assets/img/favicon.ico')
+    link(href='http://getbootstrap.com/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css', rel='stylesheet')
+    link(href='./stylesheets/justified-nav.css', rel='stylesheet')
+    link(href='./stylesheets/styles.css', rel='stylesheet')
+  body
+    .container
+      //
+        The justified navigation menu is meant for single line per list item.
+        Multiple lines will require custom code not provided by Bootstrap.
+      .masthead
+        h3 My-Pantry
+        nav
+          ul.nav.nav-justified
+            li.active
+              a(href='/') Recipe Search
+            li
+              a(href='/favorites') Favorites
+      .jumbotron
+        h1 Recipe Search
+      .container
+        form
+          fieldset.form-group
+            label(for='ingredients') Ingredients
+            input#ingredients.form-control(type='text', placeholder='Ingredients')
+            small.text-muted Please seperate ingredients with a ",".
+          fieldset.form-group
+            label(for='ingredientsExclude') Ingredients To Exclude
+            input#ingredientsExclude.form-control(type='text', placeholder='Ingredients To Exclude')
+            small.text-muted Please seperate ingredients with a ",".
+          .row
+            .col-sm-12.col-md-6
+              fieldset.form-group#diets
+                label(for='diets') Diets
+                .checkbox
+                  label
+                    input(type='checkbox' value='Lacto Vegetarian')
+                    |  Lacto Vegetarian
+                .checkbox
+                  label
+                    input(type='checkbox' value='Ovo Vegetarian')
+                    |  Ovo Vegetarian
+                .checkbox
+                  label
+                    input(type='checkbox' value='Paleo')
+                    |  Paleo
+                .checkbox
+                  label
+                    input(type='checkbox' value='Pescetarian')
+                    |  Pescetarian
+                .checkbox
+                  label
+                    input(type='checkbox' value='Vegan')
+                    |  Vegan
+                .checkbox
+                  label
+                    input(type='checkbox' value='Vegetarian')
+                    |  Vegetarian
+            .col-sm-12.col-md-6
+              fieldset.form-group#allergies
+                label(for='allergies') Allergies
+                .checkbox
+                  label
+                    input(type='checkbox' value='Dairy-Free')
+                    |  Dairy-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Egg-Free')
+                    |  Egg-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Gluten-Free')
+                    |  Gluten-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Peanut-Free')
+                    |  Peanut-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Seafood-Free')
+                    |  Seafood-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Seseme-Free')
+                    |  Seseme-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Sulfite-Free')
+                    |  Sulfite-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Tree Nut-Free')
+                    |  Tree Nut-Free
+                .checkbox
+                  label
+                    input(type='checkbox' value='Wheat-Free')
+                    |  Wheat-Free
+          button.btn.btn-primary.search(type='submit') Search
+          .recipes
+          //load recipe view down here after search
+          script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+          script(src='js/search.js')
+        footer.footer
+          p &copy 2016 Bradley Corp.
+      // /container
