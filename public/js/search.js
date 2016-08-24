@@ -9,18 +9,17 @@
       var allergies = $('select option:selected').text();
 
       // make the AJAX request
-      $.getJSON('http://api.yummly.com/v1/api/recipes?_app_id=3e5b7dbe&_app_key=1d681685a57dac07e6df0b1c0df38de6&=onion%20soup' + '&requirePictures=true', function (json) {
+      $.getJSON('http://api.yummly.com/v1/api/recipes?_app_id=3e5b7dbe&_app_key=1d681685a57dac07e6df0b1c0df38de6&q=ginger' + '&requirePictures=true', function (json) {
           // do all this on success
           var recipes = [],
               $ul;
 
           $.each(json, function (key, val) {
-            recipes.push('<li id="coolstuff">Brad</li>')
             if (key === "matches"){
-              recipes.push('<li id="coolstuff">Brad</li>')
-              //for (i = 0; i < 1; i++) {
-              //  recipes.push('<li class="recipeName">' + 'brad' + '</li>');
-              //}
+              //recipes.push('<li id="recipe">Brad</li>')
+              for (i = 0; i < val.length ; i++) {
+              recipes.push('<li class="recipeName">' + val[i].recipeName + '</li>');
+              }
             }
           });
           if (recipes.length < 1) {
