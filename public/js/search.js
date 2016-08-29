@@ -6,19 +6,45 @@
 
       var recipeName = document.getElementById('recipeName').value;
       var recipeNameString = '&q=' + recipeName;
+
       var ingredientHtml = '&allowedIngredient[]=';
-      var ingredientsArray = document.getElementById('ingredients').value.split(',');
-      for (i = 0; i < ingredientsArray.length; i++){
-        ingredientsArray[i] = ingredientHtml + ingredientsArray[i];
-      }
+      var ingredientsArray = document.getElementById('ingredients').value.split(",");
       var ingredientsString = '';
-      for (i = 0; i < ingredientsArray.length; i++){
-        ingredientsString += ingredientsArray[i];
+      if (ingredientsArray[0] !== ""){
+        for (i = 0; i < ingredientsArray.length; i++){
+          ingredientsArray[i] = ingredientHtml + ingredientsArray[i].trim();
+        }
+        for (i = 0; i < ingredientsArray.length; i++){
+          ingredientsString += ingredientsArray[i];
+        }
       }
-      // var ingredientsExclude = $('select option:selected').text();
+
+      var excludedIngredientHtml = '&excludedIngredient[]=';
+      var excludedIngredientsArray = document.getElementById('ingredientsExclude').value.split(",");
+      var excludedIngredientsString = '';
+      if (excludedIngredientsArray[0] !== ""){
+        for (i = 0; i < excludedIngredientsArray.length; i++){
+          excludedIngredientsArray[i] = excludedIngredientHtml + excludedIngredientsArray[i].trim();
+        }
+        for (i = 0; i < excludedIngredientsArray.length; i++){
+          excludedIngredientsString += excludedIngredientsArray[i];
+        }
+      }
+
       // var diets = $('select option:selected').text();
       // var allergies = $('select option:selected').text();
-      $.getJSON('http://api.yummly.com/v1/api/recipes?_app_id=3e5b7dbe&_app_key=1d681685a57dac07e6df0b1c0df38de6'+ recipeNameString + ingredientsString + '&requirePictures=true', function (json) {
+
+      var apiHtml = 'http://api.yummly.com/v1/api/recipes?_app_id=3e5b7dbe&_app_key=1d681685a57dac07e6df0b1c0df38de6' +recipeNameString;
+      if (ingredientsString){
+        apiHtml += ingredientsString;
+      }
+      if (excludedIngredientsString){
+        apiHtml += excludedIngredientsString;
+      }
+      apiHtml += '&requirePictures=true';
+      apiHtml = apiHtml.replace(' ', '%20');
+
+      $.getJSON(apiHtml, function (json) {
         var recipes = [],
             $recipes;
 
