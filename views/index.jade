@@ -14,9 +14,6 @@ html(lang='en')
     link(href='./stylesheets/styles.css', rel='stylesheet')
   body
     .container
-      //
-        The justified navigation menu is meant for single line per list item.
-        Multiple lines will require custom code not provided by Bootstrap.
       .masthead
         h3 My-Pantry
         nav
@@ -30,6 +27,10 @@ html(lang='en')
       .container
         form
           fieldset.form-group
+            label(for='recipeName') Recipe Name
+            input#recipeName.form-control(type='text', placeholder='Recipe Name')
+            small.text-muted Please enter a recipe name, whole or partial.
+          fieldset.form-group
             label(for='ingredients') Ingredients
             input#ingredients.form-control(type='text', placeholder='Ingredients')
             small.text-muted Please seperate ingredients with a ",".
@@ -41,74 +42,75 @@ html(lang='en')
             .col-sm-12.col-md-6
               fieldset.form-group#diets
                 label(for='diets') Diets
-                .checkbox
+                .checkbox.diets
                   label
                     input(type='checkbox' value='Lacto Vegetarian')
                     |  Lacto Vegetarian
-                .checkbox
+                .checkbox.diets
                   label
                     input(type='checkbox' value='Ovo Vegetarian')
                     |  Ovo Vegetarian
-                .checkbox
+                .checkbox.diets
                   label
                     input(type='checkbox' value='Paleo')
                     |  Paleo
-                .checkbox
+                .checkbox.diets
                   label
                     input(type='checkbox' value='Pescetarian')
                     |  Pescetarian
-                .checkbox
+                .checkbox.diets
                   label
                     input(type='checkbox' value='Vegan')
                     |  Vegan
-                .checkbox
+                .checkbox.diets
                   label
                     input(type='checkbox' value='Vegetarian')
                     |  Vegetarian
             .col-sm-12.col-md-6
               fieldset.form-group#allergies
                 label(for='allergies') Allergies
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Dairy-Free')
                     |  Dairy-Free
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Egg-Free')
                     |  Egg-Free
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Gluten-Free')
                     |  Gluten-Fre
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Peanut-Free')
                     |  Peanut-Free
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Seafood-Free')
                     |  Seafood-Free
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Seseme-Free')
                     |  Seseme-Free
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Sulfite-Free')
                     |  Sulfite-Free
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Tree Nut-Free')
                     |  Tree Nut-Free
-                .checkbox
+                .checkbox.allergies
                   label
                     input(type='checkbox' value='Wheat-Free')
                     |  Wheat-Free
           button.btn.btn-primary.search(type='submit') Search
-          .recipes
-          //load recipe view down here after search
-          script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
-          script(src='js/search.js')
-        footer.footer
-          p &copy 2016 Bradley Corp.
-      // /container
+      .container    
+        .recipes
+        //load recipe view down here after search
+      script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+      script(src='js/search.js')
+    .container
+      footer.footer
+        p &copy 2016 Bradley Corp.
