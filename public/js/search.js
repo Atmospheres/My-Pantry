@@ -1,5 +1,5 @@
 (function ($) {
-    $('button').on('click', function (e) {
+    $('#search').on('click', function (e) {
       // remove resultset if this has already been run
       $('.recipes').empty();
 
@@ -58,7 +58,8 @@
               recipes.push('<div class="thumbnail">' + '<img src="'+ val[i].imageUrlsBySize[90] + '" alt="100%x200" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;"/>');
               recipes.push('<div class="caption">' + '<h3 class="caption-text">' + val[i].recipeName + '</h3>');
               recipes.push('<p class="caption-text">' + val[i].sourceDisplayName + '</p>');
-              recipes.push('<p><a href="#" role="buton" class="btn btn-primary"> Details </a><a href="#" role="buton" class="btn btn-primary"> Favorite </a>');
+              recipes.push('<p><a href="#" role="buton" class="btn btn-primary" id="details" data-poload="http://api.yummly.com/v1/api/recipe/' + val[i].id + '_app_id=3e5b7dbe&_app_key=1d681685a57dac07e6df0b1c0df38de6"> Details </a>');
+              recipes.push('<a href="#" role="buton" class="btn btn-primary" id="favorite"> Favorite </a>');
               recipes.push('</div></div></div>');
               if ((i+1)%3 === 0){
                 recipes.push('</div>');

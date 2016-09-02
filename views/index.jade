@@ -105,12 +105,19 @@ html(lang='en')
                   label
                     input(type='checkbox' value='Wheat-Free')
                     |  Wheat-Free
-          button.btn.btn-primary.search(type='submit') Search
+          button.btn.btn-primary#search(type='submit') Search
       .container    
         .recipes
+        #popoverTemplateContainer(style='display: none')
+          #popoverTemplate
+            .popover
+              .arrow
+              .popover-inner
+                //Custom data here
+
         //load recipe view down here after search
       script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
       script(src='js/search.js')
     .container
       footer.footer
-        p &copy 2016 Bradley Corp.
+        p &copy 2016 My-Pantry.

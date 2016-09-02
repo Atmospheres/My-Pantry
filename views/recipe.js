@@ -36,26 +36,9 @@ html(lang='en')
             .thumbnail
               img(src='./Images/Recipe1.jpg', alt='100%x200', data-holder-rendered='true', style='height: 200px; width: 100%; display: block;')
               .caption
-                h3.caption-text Poutine
+                h3.caption-text
                 p.caption-text Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
                 p
-                  a.btn.btn-primary(href='#', role='button') Details
-          .col-sm-6.col-md-4
-            .thumbnail
-              img(src='./Images/Recipe2.jpg', alt='100%x200', data-holder-rendered='true', style='height: 200px; width: 100%; display: block;')
-              .caption
-                h3.caption-text Chicken Carbonara
-                p.caption-text Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-                p
-                p.caption-text
-                  a.btn.btn-primary(href='#', role='button') Details
-          .col-sm-6.col-md-4
-            .thumbnail
-              img(src='./Images/Recipe3.jpg', alt='100%x200', data-holder-rendered='true', style='height: 200px; width: 100%; display: block;')
-              .caption
-                h3.caption-text Boston Baked Stuffed Lobster
-                p.caption-text  Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
-                p
-                  a.btn.btn-primary(href='#', role='button') Details
+                  a.btn.btn-primary(href='#', role='button') Favorite
         footer.footer
           p &copy 2016 Bradley Corp.
