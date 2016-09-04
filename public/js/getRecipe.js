@@ -45,6 +45,7 @@ get_data_for_popover_and_display = function() {
        recipeHtml += nutritionHtml;
        recipeHtml += ratingHtml;
        recipeHtml += sourceHtml;
+
        el.attr('data-content', recipeHtml);
        el.popover('show');
        el.addClass('recipe-loaded');
