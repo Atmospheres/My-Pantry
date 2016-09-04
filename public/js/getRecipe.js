@@ -31,7 +31,7 @@ get_data_for_popover_and_display = function() {
              }
            }
            if (key === "rating"){
-             ratingHtml += 'Rating: ' + val + '</p>';
+             ratingHtml += 'Rating: ' + val + '/5</p>';
            }
            if (key === "numberOfServings"){
              servingsHtml += '<p>Servings: ' + val + '<br>';
