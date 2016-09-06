@@ -17,4 +17,15 @@ router.get('/favorites', function(req, res) {
     });
 });
 
+//post favorites
+router.post('/favorites', function(req, res) {
+    var db = req.db;
+    var collection = db.get('usercollection');
+    collection.insert(req.body, function(err, result){
+      res.send(
+        (err === null) ? {msg: '' } : { msg: err }
+      );
+    });
+});
+
 module.exports = router;

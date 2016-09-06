@@ -19,9 +19,9 @@ html(lang='en')
         h3 My-Pantry
         nav
           ul.nav.nav-justified
-            li.active
-              a(href='/') Recipe Search
             li
+              a(href='/') Recipe Search
+            li.active
               a(href='/favorites') Favorites
       .jumbotron
         h1 Favorites
@@ -33,12 +33,16 @@ html(lang='en')
                 img(src='#{recipe.images[0].hostedLargeUrl}', alt='100%x200', data-holder-rendered='true', style='height: 300px; width: 100%; display: block;')
                 .caption
                   h3.caption-text #{recipe.name}
+                  h4.caption-text Ingredients:
+                  ul
+                    each ingredient, j in recipe.ingredientLines
+                      li.caption-text #{ingredient}
+                  p.caption-text
+                    | Serverings :#{recipe.numberOfServings}
+                    br
+                    | Rating #{recipe.rating} / 5
                   p
-                    button.btn.btn-primary.details(type='button', data-toggle='popover', title='', value='Maple-Bacon-Brownies-1855284', data-original-title='Maple Bacon Brownies')  Details 
-    
-
-          
-
+                    a.btn.btn-primary.details(type='button', href='#{recipe.source.sourceRecipeUrl}', target='_blank', data-original-title='', title='') Source
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
       script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
       script(src='js/search.js')

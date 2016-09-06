@@ -45,66 +45,66 @@ html(lang='en')
                 label(for='diets') Diets
                 .checkbox.diets
                   label
-                    input(type='checkbox' value='Lacto Vegetarian')
+                    input(id='lacto-veg' type='checkbox' value='Lacto Vegetarian')
                     |  Lacto Vegetarian
                 .checkbox.diets
                   label
-                    input(type='checkbox' value='Ovo Vegetarian')
+                    input(id='ovo-veg' type='checkbox' value='Ovo Vegetarian')
                     |  Ovo Vegetarian
                 .checkbox.diets
                   label
-                    input(type='checkbox' value='Paleo')
+                    input(id='paleo' type='checkbox' value='Paleo')
                     |  Paleo
                 .checkbox.diets
                   label
-                    input(type='checkbox' value='Pescetarian')
+                    input(id='pescetarian' type='checkbox' value='Pescetarian')
                     |  Pescetarian
                 .checkbox.diets
                   label
-                    input(type='checkbox' value='Vegan')
+                    input(id='vegan' type='checkbox' value='Vegan')
                     |  Vegan
                 .checkbox.diets
                   label
-                    input(type='checkbox' value='Vegetarian')
+                    input(id='vegetarian' type='checkbox' value='Vegetarian')
                     |  Vegetarian
             .col-sm-12.col-md-6
               fieldset.form-group#allergies
                 label(for='allergies') Allergies
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Dairy-Free')
+                    input(id='dairy-free' type='checkbox' value='Dairy-Free')
                     |  Dairy-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Egg-Free')
+                    input(id='egg-free' type='checkbox' value='Egg-Free')
                     |  Egg-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Gluten-Free')
+                    input(id='gluten-free' type='checkbox' value='Gluten-Free')
                     |  Gluten-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Peanut-Free')
+                    input(id='peanut-free' type='checkbox' value='Peanut-Free')
                     |  Peanut-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Seafood-Free')
+                    input(id='seafood-free' type='checkbox' value='Seafood-Free')
                     |  Seafood-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Seseme-Free')
+                    input(id='seseme-free' type='checkbox' value='Seseme-Free')
                     |  Seseme-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Sulfite-Free')
+                    input(id='sulfite-free' type='checkbox' value='Sulfite-Free')
                     |  Sulfite-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Tree Nut-Free')
+                    input(id='tree-nut-free' type='checkbox' value='Tree Nut-Free')
                     |  Tree Nut-Free
                 .checkbox.allergies
                   label
-                    input(type='checkbox' value='Wheat-Free')
+                    input(id='wheat-free' type='checkbox' value='Wheat-Free')
                     |  Wheat-Free
           button.btn.btn-primary#search(type='submit') Search
       .container    
@@ -120,7 +120,8 @@ html(lang='en')
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
       script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
       script(src='js/search.js')
-      script(src='js/getRecipe.js')  
+      script(src='js/getRecipe.js')
+      script(src='js/saveRecipe.js')
     .container
       footer.footer
         p &copy 2016 My-Pantry.
