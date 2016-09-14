@@ -107,6 +107,7 @@ html(lang='en')
                     input(id='wheat-free' type='checkbox' value='Wheat-Free')
                     |  Wheat-Free
           button.btn.btn-primary#search(type='submit') Search
+          p(id='save-favorite' visibility='hidden' value='')
       .container    
         .recipes
         #popoverTemplateContainer(style='display: none')
@@ -117,11 +118,11 @@ html(lang='en')
                 //Custom data here
 
         //load recipe view down here after search
+      script(src='http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js')
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
       script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
       script(src='js/search.js')
-      script(src='js/getRecipe.js')
-      script(src='js/saveRecipe.js')
+      script(src='js/recipe.js')
     .container
       footer.footer
         p &copy 2016 My-Pantry.

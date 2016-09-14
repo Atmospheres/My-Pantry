@@ -110,7 +110,7 @@
               recipes.push('<div class="caption">' + '<h3 class="caption-text">' + val[i].recipeName + '</h3>');
               recipes.push('<p class="caption-text">' + val[i].sourceDisplayName + '</p>');
               recipes.push('<p><button type="button" class="btn btn-primary details" data-toggle="popover" title="' + val[i].recipeName + '" value="' + val[i].id + '"> Details </button> ');
-              recipes.push('<button type="button" class="btn btn-primary save-favorite" value="' + val[i].id + '"> Favorite </button></p>');
+              recipes.push('<button type="button" class="btn btn-primary save-favorite" method="post" action="saveFavorite" value="' + val[i].id + '"> Favorite </button></p>');
               recipes.push('</div></div></div>');
               if ((i+1)%3 === 0){
                 recipes.push('</div>');
