@@ -1,8 +1,3 @@
-$(document).ajaxComplete(function(){
-  $('.details').popover({"trigger": "manual", "html":"true"});
-  $('.details').click(get_data_for_popover_and_display);
-  $('.save-favorite').on('click', saveRecipe );
-});
 get_data_for_popover_and_display = function() {
   var el = $(this);
   if(el.hasClass('recipe-loaded')){
@@ -26,18 +21,18 @@ get_data_for_popover_and_display = function() {
              }
              ingredientsHtml += '</ul>';
            }
-           if (key === "nutritionEstimates"){
+           else if (key === "nutritionEstimates"){
              if(val.length > 0){
              nutritionHtml = 'Cal. per Serving: ' + val[0].value + '<br>';
              }
            }
-           if (key === "rating"){
+           else if (key === "rating"){
              ratingHtml += 'Rating: ' + val + '</p>';
            }
-           if (key === "numberOfServings"){
+           else if (key === "numberOfServings"){
              servingsHtml += '<p>Servings: ' + val + '<br>';
            }
-           if (key === "source"){
+           else if (key === "source"){
              sourceHtml += '<p><a type="button" class="btn btn-primary details" href="'+ val.sourceRecipeUrl +'" >Source</a>';
            }
          })

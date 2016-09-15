@@ -106,7 +106,7 @@
                 recipes.push('<div class="row">');
               }
               recipes.push('<div class="col-sm-6 col-md-4">');
-              recipes.push('<div class="thumbnail">' + '<img src="'+ val[i].imageUrlsBySize[90] + '" alt="' + val[i].recipeName + '" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;"/>');
+              recipes.push('<div class="thumbnail">' + '<img src="'+ val[i].imageUrlsBySize[90].replace('=s90-c', '') + '" alt="' + val[i].recipeName + '" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;"/>');
               recipes.push('<div class="caption">' + '<h3 class="caption-text">' + val[i].recipeName + '</h3>');
               recipes.push('<p class="caption-text">' + val[i].sourceDisplayName + '</p>');
               recipes.push('<p><button type="button" class="btn btn-primary details" data-toggle="popover" title="' + val[i].recipeName + '" value="' + val[i].id + '"> Details </button> ');
@@ -123,7 +123,11 @@
       }
       $recipes = $('<div />').appendTo('.recipes');
       $recipes.append(recipes.join(''));
+      $('.details').popover({"trigger": "manual", "html":"true"});
+      $('.details').click(get_data_for_popover_and_display);
+      $('.save-favorite').on('click', saveRecipe );
     });
     e.preventDefault();
+
   });
 }(jQuery));

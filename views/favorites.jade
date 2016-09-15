@@ -38,7 +38,7 @@ html(lang='en')
                     each ingredient, j in recipe.ingredientLines
                       li.caption-text #{ingredient}
                   p.caption-text
-                    | Serverings :#{recipe.numberOfServings}
+                    | Serverings: #{recipe.numberOfServings}
                     br
                     | Rating #{recipe.rating} / 5
                   p
@@ -46,7 +46,7 @@ html(lang='en')
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
       script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
       script(src='js/search.js')
-      script(src='js/getRecipe.js')  
+      //script(src='js/saveRecipe.js')  
     .container
       footer.footer
         p &copy 2016 My-Pantry.
