@@ -27,13 +27,13 @@ router.post('/saverecipe', function(req, res) {
     });
 });
 
-// router.delete('/deleterecipe/:id', function(req, res){
-//   var db = req.db;
-//   var collection = dv.get('usercollection');
-//   var recipeToDelete = req.params.id;
-//   collection.remove({'_id' : userToDelete }, function(err) {
-//     res.send((err === null_) ? {msg: ''} : {msg:'error: ' + err});
-//   });
-// });
+router.delete('/deleterecipe/:id', function(req, res){
+  var db = req.db;
+  var collection = db.get('usercollection');
+  var recipeToDelete = req.params.id;
+  collection.remove({'_id' : recipeToDelete }, function(err) {
+    res.send((err === null_) ? {msg: ''} : {msg:'error: ' + err});
+  });
+});
 
 module.exports = router;

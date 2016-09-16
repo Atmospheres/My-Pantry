@@ -1,6 +1,7 @@
 get_data_for_popover_and_display = function() {
   var el = $(this);
   if(el.hasClass('recipe-loaded')){
+    el.popover('toggle');
   }
   else {
     var _data = $(this).attr('alt');
@@ -41,7 +42,8 @@ get_data_for_popover_and_display = function() {
        recipeHtml += nutritionHtml;
        recipeHtml += ratingHtml;
        recipeHtml += sourceHtml;
-       el.attr('data-content', recipeHtml).success(el.popover('toggle'));
+       el.attr('data-content', recipeHtml);
+       el.popover('toggle');
        el.addClass('recipe-loaded');
      });
   }
@@ -51,7 +53,6 @@ function saveRecipe(event){
   event.preventDefault();
   var recipeUrl = 'http://api.yummly.com/v1/api/recipe/' + this.value + '?_app_id=3e5b7dbe&_app_key=1d681685a57dac07e6df0b1c0df38de6';
   var json = $.getJSON(recipeUrl, function (data){
-  console.log(JSON.stringify(data));
    $.ajax({
        type: 'POST',
        data: data,

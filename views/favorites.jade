@@ -43,10 +43,10 @@ html(lang='en')
                     | Rating #{recipe.rating} / 5
                   p
                     a.btn.btn-primary.details(type='button', href='#{recipe.source.sourceRecipeUrl}', target='_blank', data-original-title='', title='') Source
+                    a.btn.btn-primary.delete-favorite(type='button', action='deleteFavorite', rel='#{recipe._id}' value="' + val[i].id + '")  Delete
       script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
       script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-      script(src='js/search.js')
-      //script(src='js/saveRecipe.js')  
+      script(src='js/removeRecipe.js')  
     .container
       footer.footer
         p &copy 2016 My-Pantry.
