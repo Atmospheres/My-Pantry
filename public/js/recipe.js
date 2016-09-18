@@ -34,7 +34,7 @@ get_data_for_popover_and_display = function() {
              servingsHtml += '<p>Servings: ' + val + '<br>';
            }
            else if (key === "source"){
-             sourceHtml += '<p><a type="button" class="btn btn-primary details" href="'+ val.sourceRecipeUrl +'" >Source</a>';
+             sourceHtml += '<p><a type="button", class="btn btn-primary details", target="_blank",  href="'+ val.sourceRecipeUrl +'" >Source</a>';
            }
          })
        recipeHtml += ingredientsHtml;
