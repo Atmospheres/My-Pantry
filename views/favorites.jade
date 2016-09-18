@@ -28,6 +28,8 @@ html(lang='en')
       .container
         .row
           each recipe, i in favorites
+            -if (i%3 == 0)
+              .row
             .col-sm-6.col-md-4
               .thumbnail
                 img(src='#{recipe.images[0].hostedLargeUrl}', alt='100%x200', data-holder-rendered='true', style='height: 300px; width: 100%; display: block;')
